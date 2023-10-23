@@ -146,10 +146,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-  let newstr = str.reduce((accum, ostr) =>{
-    return accum - ostr;
-  },0);
-  return newstr;
+  return str.split('').reduce((a, c) => c + a, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
