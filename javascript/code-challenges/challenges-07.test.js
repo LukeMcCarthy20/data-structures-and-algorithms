@@ -89,7 +89,11 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
-  
+  let newarr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newarr.push(arr.charAt(i));
+  }
+  return newarr;
 };
 
 
@@ -135,10 +139,13 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  return recipe.ingredients.map(ingredient => {
+    const words = ingredient.split(' ');
+    return words.slice(2).join(' ');
+  });
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
