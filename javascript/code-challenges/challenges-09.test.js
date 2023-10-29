@@ -10,13 +10,13 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
-  let newarr = arr.reduce((a,num) => {
-    if (num > a){
+  let newarr = arr.reduce((a, num) => {
+    if (num > a) {
       return num;
-    } else{
+    } else {
       return a;
     }
-  },arr[0]);
+  }, arr[0]);
   return newarr;
 };
 
@@ -27,7 +27,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
@@ -72,7 +73,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 const updateNumbers = (obj) => {
   // Solution code here...
   let arr = [];
-  for (let name in obj){
+  for (let name in obj) {
     arr.push(`${name}: ${obj[name]}`);
   }
   return arr;
@@ -132,6 +133,9 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  for (let character of arr) {
+    houses.push(character.house);
+  }
   return houses;
 };
 
@@ -149,6 +153,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+
+  let characterObject = arr.find(char => char.name === character);
+
+  return characterObject && characterObject.children && characterObject.children.length > 0;
+
 
 };
 
